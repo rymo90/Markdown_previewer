@@ -1,21 +1,56 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Reviewer from './components/Reviewer';
+import Editor from './components/Editor';
+class App extends React.Component {
+  constructor (){
+    super();
+    this.state= {
+      surename: [
+        {
+          title: 'student',
+          name: 'Redwan'
+        },
+        {
+          title: 'student',
+          name: 'sara'
+        },
+        {
+          title: 'student',
+          name: 'nura'
+        },
 
-class App extends Component {
+
+      ],
+      points: [
+        {
+          first: "Redwan",
+          point: "30"
+        },
+        {
+          second: "nura",
+          point: "20"
+        },
+        {
+          therid: "sara",
+          point: "10"
+        },
+      ]
+    }
+
+
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>components for {this.props.name}</h1>
+        <Reviewer surename={this.state.surename}/>
+        <Editor points= {this.state.points} />
+
       </div>
     );
   }
 }
+
 
 export default App;
